@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+"""
+Requirements file for Raspberry Pi OS - Obstacle Avoidance Robot
+Install dependencies with: pip3 install -r requirements.txt
+"""
+
+# Core libraries
+pyserial>=3.5          # Serial communication with Arduino
+rplidar>=0.9.5        # RPLIDAR C1 driver (official library)

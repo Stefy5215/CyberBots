@@ -1,0 +1,210 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║           🤖 ROBOT ESQUIVA OBSTÁCULOS CON LiDAR C1 - Elegoo                ║
+║         Raspberry Pi 5 + Elegoo Smart Car + LiDAR C1                       ║
+║                                                                              ║
+║                         ⭐ EMPIEZA AQUÍ ⭐                                  ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 ORDEN DE INSTALACIÓN Y EJECUCIÓN
+════════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Lee la documentación (5 minutos)
+────────────────────────────────────────
+┌─ Leer EN ESTE ORDEN:
+│  1. README_ELEGOO.md         ← Descripción completa del proyecto
+│  2. ESQUEMA_CONEXIONES.txt   ← Cómo conectar el hardware
+└─
+
+PASO 2: Preparar Raspberry Pi (10 minutos)
+───────────────────────────────────────────
+┌─ En la Raspberry Pi, ejecuta:
+│
+│  cd ~/Desktop/proyecto\ 18012026
+│  chmod +x setup_elegoo.sh
+│  bash setup_elegoo.sh
+│
+│  Esto instalará:
+│  • Dependencias del sistema
+│  • pyserial (comunicación)
+│  • rplidar-python (LiDAR)
+│
+│  IMPORTANTE: Reinicia sesión después
+│              exit
+│              (reconecta SSH o reinicia)
+└─
+
+PASO 3: Cargar código en Elegoo (5 minutos)
+────────────────────────────────────────────
+┌─ En tu computadora:
+│
+│  1. Abre Arduino IDE (descargar si no tienes)
+│  2. Crea un nuevo proyecto
+│  3. Copia estos 3 archivos AL MISMO SKETCH:
+│     • esquiva_lidar_elegoo.ino
+│     • DeviceDriverSet.h
+│     • DeviceDriverSet.cpp
+│  4. Tools → Board → Arduino Uno (o tu placa)
+│  5. Tools → Port → /dev/ttyACM0 (o el puerto que veas)
+│  6. Upload (Ctrl+U)
+│
+│  ✓ El LED de la placa parpadeará = éxito
+└─
+
+PASO 4: Verificar conexiones (5 minutos)
+─────────────────────────────────────────
+┌─ En Raspberry Pi:
+│
+│  python3 prueba_conexiones.py
+│
+│  Deberías ver:
+│  ✓ Arduino conectado
+│  ✓ LiDAR conectado
+│
+│  Si hay errores, revisa:
+│  • Cables USB conectados
+│  • Puertos seriales: ls /dev/tty*
+└─
+
+PASO 5: ¡EJECUTAR EL ROBOT! 🚀
+──────────────────────────────
+┌─ En Raspberry Pi:
+│
+│  python3 robot_esquiva_lidar.py
+│
+│  Esperarás ver:
+│  ✓ LiDAR conectado
+│  ✓ Elegoo conectado
+│  🤖 Iniciando robot esquivador...
+│  → Servo=90° Motor=70
+│  Adelante: 120.5cm Izq: 150.0cm Der: 155.0cm
+│  ...
+│
+│  Para detener: Ctrl+C
+└─
+
+
+📁 ARCHIVOS POR CATEGORÍA
+════════════════════════════════════════════════════════════════════════════════
+
+🔌 CÓDIGO ELEGOO (Arduino)
+├─ esquiva_lidar_elegoo.ino  ← Código principal
+├─ DeviceDriverSet.h                    ← Header de drivers
+└─ DeviceDriverSet.cpp                  ← Implementación drivers
+
+🐍 CÓDIGO RASPBERRY PI (Python)
+├─ robot_esquiva_lidar.py                ← 🌟 Script principal - EJECUTAR ESTE
+├─ prueba_conexiones.py                  ← Verificar conexiones
+├─ control_manual.py                    ← Control manual (opcional)
+└─ requirements.txt                     ← Dependencias Python
+
+⚙️ CONFIGURACIÓN
+├─ config_robot.py                      ← Parámetros ajustables
+├─ setup_elegoo.sh                      ← Instalación automática
+└─ setup.sh                             ← Instalación alternativa
+
+📖 DOCUMENTACIÓN
+├─ README_ELEGOO.md                     ← 📌 LEE PRIMERO
+├─ ESQUEMA_CONEXIONES.txt               ← Diagrama de conexiones
+├─ GUIA_RAPIDA.md                       ← Guía resumida
+├─ INDICE_ARCHIVOS.txt                  ← Listado completo
+└─ INICIO_AQUI.txt                      ← Este archivo
+
+
+🔧 CONFIGURACIÓN RÁPIDA
+════════════════════════════════════════════════════════════════════════════════
+
+Editar robot_esquiva_lidar.py para ajustar:
+
+    FRONT_THRESHOLD = 50    # ← Cambiar si no detecta obstáculos
+    SIDE_THRESHOLD = 35     # ← Sensibilidad lateral
+    MOTOR_NORMAL = 70       # ← Velocidad (0-255)
+
+
+⚡ COMANDOS ÚTILES
+════════════════════════════════════════════════════════════════════════════════
+
+# Ver puertos disponibles
+ls /dev/tty*
+
+# Verificar Elegoo
+ls /dev/ttyACM*
+
+# Verificar LiDAR
+ls /dev/ttyUSB*
+
+# Editar configuración
+nano robot_esquiva_lidar.py
+
+# Ver logs del robot
+python3 robot_esquiva_lidar.py
+
+# Control manual
+python3 control_manual.py
+
+
+🐛 TROUBLESHOOTING RÁPIDO
+════════════════════════════════════════════════════════════════════════════════
+
+❌ "Permission denied /dev/ttyACM0"
+✓ Solución: sudo usermod -a -G dialout $USER
+            Luego reinicia sesión
+
+❌ "Arduino no se conecta"
+✓ Solución: Verificar cable USB
+            ls /dev/ttyACM*
+            Reconectar USB
+
+❌ "LiDAR no funciona"
+✓ Solución: ls /dev/ttyUSB*
+            Editar LIDAR_PORT en robot_esquiva_lidar.py
+
+❌ "Motores no se mueven"
+✓ Solución: • Verificar batería 12V
+            • Revisar conexiones L298N
+            • Monitor serial en Arduino IDE
+
+❌ "Servo no responde"
+✓ Solución: • Verificar pin 10 en Arduino
+            • Verificar alimentación 5V
+
+
+✨ CARACTERÍSTICAS DEL ROBOT
+════════════════════════════════════════════════════════════════════════════════
+
+✓ Detección 360° con LiDAR C1
+✓ Esquiva automática de obstáculos
+✓ Control del servo motor para dirección
+✓ Motor DC con velocidad variable
+✓ Comunicación Raspberry Pi ↔ Elegoo
+✓ Sistema de seguridad (watchdog)
+✓ Configuración modular
+
+
+📊 PROTOCOLO COMUNICACIÓN
+════════════════════════════════════════════════════════════════════════════════
+
+Formato: S<ángulo>,M<velocidad>\n
+
+Ejemplos:
+  S90,M70    → Recto, velocidad 70
+  S45,M50    → Derecha, velocidad 50
+  S135,M100  → Izquierda, velocidad 100
+  S90,M0     → Parar
+
+
+🎯 SIGUIENTE PASO
+════════════════════════════════════════════════════════════════════════════════
+
+1. ✓ Leer README_ELEGOO.md
+2. ✓ Seguir pasos 1-5 arriba
+3. ✓ ¡Disfrutar del robot!
+
+Problemas? Revisa ESQUEMA_CONEXIONES.txt
+
+
+═══════════════════════════════════════════════════════════════════════════════
+Versión 1.0 - Enero 2026
+Raspberry Pi 5 + Elegoo Smart Car + LiDAR C1
+═══════════════════════════════════════════════════════════════════════════════

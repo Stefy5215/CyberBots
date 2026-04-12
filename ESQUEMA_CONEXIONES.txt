@@ -1,0 +1,76 @@
+/*
+ * Esquema de conexiones - Robot Esquiva Obstáculos
+ * Arduino + Motor DC 12V + Servo + LiDAR C1
+ */
+
+// PINES ARDUINO
+// ==============
+// PWM Pins (para servo y motor):
+// - Pin 3, 5, 6, 9, 10, 11
+
+// SERVO MOTOR (Control de dirección)
+// ===================================
+// Servo Pin 1 (Rojo)    → Arduino 5V
+// Servo Pin 2 (Marrón)  → Arduino GND
+// Servo Pin 3 (Naranja) → Arduino Pin 9 (PWM)
+
+// MOTOR DC 12V + Driver L298N
+// ============================
+// L298N Pin IN1    → Arduino Pin 7 (Dirección 1)
+// L298N Pin IN2    → Arduino Pin 8 (Dirección 2)
+// L298N Pin ENA    → Arduino Pin 5 (PWM - Velocidad)
+// 
+// L298N Pin GND    → Arduino GND
+// L298N Pin +12V   → Batería 12V+
+// 
+// Batería 12V-     → Motor GND
+// Motor 1          → L298N OUT1
+// Motor 2          → L298N OUT2
+
+// COMUNICACIÓN SERIE (Raspberry Pi → Arduino)
+// =============================================
+// Raspberry Pi USB  → Arduino USB
+// Puerto: /dev/ttyACM0
+// Baudrate: 9600
+
+// LIDAR C1 (Raspberry Pi USB)
+// ============================
+// Raspberry Pi USB  → LiDAR Mini-USB
+// Puerto: /dev/ttyUSB0
+// Baudrate: 115200
+
+// ALIMENTACIÓN
+// ============
+// Raspberry Pi 5:
+//   - Adapter 5V/5A conectado a USB-C
+
+// Arduino:
+//   - USB desde Raspberry Pi
+//   - O batería 5V externa
+
+// Motor 12V:
+//   - Batería 12V (mínimo 2A)
+
+// LiDAR C1:
+//   - Alimentado por Raspberry Pi
+
+// DIAGRAMA SIMPLIFICADO
+// =====================
+// 
+//     [Raspberry Pi 5]
+//          |
+//          +--- USB → [Arduino] --- PWM Pin 5  → [L298N] --- Motor 12V
+//          |                    --- PWM Pin 9  → [Servo]
+//          |
+//          +--- USB → [LiDAR C1]
+//
+//     [Batería 12V] → [L298N]
+//
+
+// NOTAS IMPORTANTES
+// =================
+// 1. Usar condensadores de desacoplamiento cerca de la L298N
+// 2. Conexiones de tierra (GND) deben ser comunes
+// 3. LiDAR C1 necesita línea de visión despejada
+// 4. Servo debe estar centrado antes de ejecutar el código
+// 5. Motor debe tener capacidad de al menos 2A

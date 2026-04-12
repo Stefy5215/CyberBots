@@ -1,0 +1,191 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║         ROBOT ESQUIVA OBSTÁCULOS CON LiDAR C1 - ÍNDICE DE ARCHIVOS           ║
+║                    Raspberry Pi 5 + Arduino + Motor 12V                       ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📂 ARCHIVOS CREADOS EN: ~/Desktop/
+
+✅ ARCHIVOS PRINCIPALES (Necesarios)
+════════════════════════════════════════════════════════════════════════════════
+
+1. esquiva_obstaculos.py (8 KB) ⭐ PRINCIPAL
+   └─ Código Python para Raspberry Pi
+   └─ Lee el LiDAR C1 y controla el servo + motor
+   └─ Lógica de esquiva de obstáculos
+   └─ Se comunica con Arduino vía serial
+   
+2. control_arduino.ino (3.6 KB) ⭐ PRINCIPAL
+   └─ Código para cargar en Arduino
+   └─ Recibe comandos de Raspberry Pi
+   └─ Controla servo motor (pin 9)
+   └─ Controla motor 12V vía L298N (pins 5, 7, 8)
+
+3. requirements.txt (150 bytes)
+   └─ Dependencias Python para Raspberry Pi
+   └─ Instalar: pip3 install -r requirements.txt
+
+✅ ARCHIVOS DE CONFIGURACIÓN
+════════════════════════════════════════════════════════════════════════════════
+
+4. config_robot.py (4.9 KB)
+   └─ Configuración personalizable del robot
+   └─ Parámetros: velocidad, distancias, ángulos
+   └─ Perfiles de conducción (cautious, normal, aggressive)
+   └─ Editar para ajustar comportamiento
+
+✅ ARCHIVOS DE UTILIDADES
+════════════════════════════════════════════════════════════════════════════════
+
+5. prueba_conexiones.py (3.6 KB)
+   └─ Verificar conexiones antes de ejecutar
+   └─ Prueba Arduino, LiDAR y puertos seriales
+   └─ Ejecutar: python3 prueba_conexiones.py
+
+6. control_manual.py (3.9 KB)
+   └─ Control manual del robot para pruebas
+   └─ Comandos: f (adelante), l (izquierda), r (derecha), etc.
+   └─ Útil para calibración y debugging
+   └─ Ejecutar: python3 control_manual.py
+
+7. setup.sh (1.5 KB)
+   └─ Script de instalación automática para Raspberry Pi
+   └─ Instala dependencias del sistema y Python
+   └─ Configura permisos seriales
+   └─ Ejecutar: bash setup.sh
+
+✅ ARCHIVOS DE DOCUMENTACIÓN
+════════════════════════════════════════════════════════════════════════════════
+
+8. GUIA_RAPIDA.md ⭐ EMPEZAR AQUÍ
+   └─ Guía de 5 minutos para empezar
+   └─ Instalación, conexiones, ejecución
+   └─ Troubleshooting rápido
+
+9. README_SETUP.md (5.2 KB)
+   └─ Documentación completa de instalación
+   └─ Hardware necesario y conexiones detalladas
+   └─ Configuración paso a paso
+   └─ Solución de problemas
+
+10. ESQUEMA_CONEXIONES.txt (2.1 KB)
+    └─ Diagrama de conexiones de hardware
+    └─ Pines Arduino a Servo, Motor, etc.
+    └─ Alimentación y comunicación serie
+
+11. INDICE_ARCHIVOS.txt (este archivo)
+    └─ Listado y descripción de todos los archivos
+
+
+📋 FLUJO DE INSTALACIÓN
+════════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Preparar Raspberry Pi (2-3 minutos)
+└─ Copiar archivos a Raspberry Pi
+└─ Ejecutar: bash setup.sh
+└─ Reiniciar sesión
+
+PASO 2: Cargar código en Arduino (1 minuto)
+└─ Usar Arduino IDE
+└─ Cargar: control_arduino.ino
+
+PASO 3: Verificar conexiones (1 minuto)
+└─ Ejecutar: python3 prueba_conexiones.py
+└─ Verificar que todo está OK
+
+PASO 4: Ejecutar el robot (¡YA!)
+└─ python3 esquiva_obstaculos.py
+
+PASO 5: Controlar manualmente (opcional)
+└─ python3 control_manual.py
+
+
+🎯 PRÓXIMOS PASOS
+════════════════════════════════════════════════════════════════════════════════
+
+1. LEE: GUIA_RAPIDA.md (5 minutos de lectura)
+2. REVISA: ESQUEMA_CONEXIONES.txt (conexiones correctas)
+3. EJECUTA: bash setup.sh (en Raspberry Pi)
+4. CARGA: control_arduino.ino (en Arduino IDE)
+5. PRUEBA: python3 prueba_conexiones.py (en Raspberry Pi)
+6. INICIA: python3 esquiva_obstaculos.py (¡A RODAR!)
+
+
+💡 CONFIGURACIÓN RECOMENDADA
+════════════════════════════════════════════════════════════════════════════════
+
+Para PRINCIPIANTES:
+└─ Editar config_robot.py
+└─ FRONT_THRESHOLD = 80  (detectar más lejos)
+└─ DEFAULT_SPEED = 100   (ir más lento)
+└─ DEBUG = True          (ver logs)
+
+Para EXPERTOS:
+└─ Ajustar PROFILES['aggressive']
+└─ Modificar logic en calculate_navigation()
+└─ Añadir sensores adicionales
+
+Para COMPETENCIAS:
+└─ FRONT_THRESHOLD = 30
+└─ DEFAULT_SPEED = 200
+└─ Calibrar servo y motor
+
+
+⚠️ IMPORTANTE
+════════════════════════════════════════════════════════════════════════════════
+
+✓ Verificar conexiones antes de encender
+✓ Arduino debe estar correctamente programado
+✓ Batería 12V con capacidad de 2A mínimo
+✓ Dar permisos seriales (usermod -a -G dialout)
+✓ Reiniciar sesión después de cambios de permisos
+✓ Usar Ctrl+C para parar emergencia
+✓ LiDAR debe tener línea de visión despejada
+
+
+📞 AYUDA
+════════════════════════════════════════════════════════════════════════════════
+
+Problema: "Permission denied" a /dev/ttyACM0
+└─ Solución: sudo usermod -a -G dialout $USER + reiniciar
+
+Problema: LiDAR no se conecta
+└─ Solución: ls /dev/ttyUSB* → verificar puerto y editar config
+
+Problema: Arduino no responde
+└─ Solución: Verificar que código está cargado + reconectar USB
+
+Problema: Motor no gira
+└─ Solución: Verificar conexiones L298N y alimentación 12V
+
+
+✨ CARACTERÍSTICAS
+════════════════════════════════════════════════════════════════════════════════
+
+✓ Detección 360° con LiDAR C1
+✓ Esquiva de obstáculos automática
+✓ Control servo para dirección precisa
+✓ Motor 12V para propulsión
+✓ Comunicación Raspberry Pi ↔ Arduino
+✓ Control manual para debugging
+✓ Configuración modular y reutilizable
+✓ Logs detallados
+✓ Sistema de seguridad (detención de emergencia)
+
+
+📦 VERSIÓN
+════════════════════════════════════════════════════════════════════════════════
+
+Versión: 1.0
+Fecha: Enero 2026
+Compatible: Raspberry Pi 5 + Raspberry Pi OS
+Motor: 12V DC
+LiDAR: RPLIDAR C1
+Microcontrolador: Arduino Uno/Nano
+Python: 3.9+
+
+
+🎉 ¡LISTO PARA EMPEZAR!
+
+Sigue la GUIA_RAPIDA.md y tendrás tu robot funcionando en 10 minutos.
+
+════════════════════════════════════════════════════════════════════════════════

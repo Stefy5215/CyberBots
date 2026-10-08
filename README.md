@@ -34,13 +34,13 @@ Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa e
 
 Stefany Andrea Tobar de Paz
 
-EDAD: 16
+EDAD: 16 años
 
 Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la electrónica y parte del desarrollo visual.
 
 Jason Arturo Carrera Garrido
 
-EDAD: 17
+EDAD: 17 años
 
 Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
 

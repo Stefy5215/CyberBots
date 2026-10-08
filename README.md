@@ -43,3 +43,9 @@ Estudiante guatemalteca de cuarto bachillerato en Ciencias y Letras con Orientac
 Jason Arturo Carrera Garrido
 
 Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
+
+WRO Future Engineers
+
+Future Engineers es una categoría de la World Robot Olympiad (WRO) en la que los participantes diseñan, construyen y programan un vehículo autónomo capaz de completar diferentes desafíos dentro de una pista. El vehículo debe interpretar su entorno, tomar decisiones y ejecutar sus movimientos sin intervención humana.
+
+Para nosotros, esta categoría representa una oportunidad para aplicar nuestros conocimientos en un proyecto real, poner a prueba nuestras habilidades y mejorar constantemente nuestro vehículo mediante pruebas y ajustes.

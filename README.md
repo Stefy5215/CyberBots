@@ -10,8 +10,13 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 
 [Nuestro equipo](#Nuetsro-equipo)
-[Misión] (#Mision) [Visión] (#Vision)
+
+[Misión] (#Mision) 
+
+     [Visión] (#Vision)
+
 [WRO Future Engineers] (#WRO Future Engineers)
+
 [Fases del desafío] (#Fases del desafío)
 
 

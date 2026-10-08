@@ -12,6 +12,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 [Nuestro equipo](#Nuetsro-equipo)
 [Misión] (#Mision) [Visión] (#Vision)
 [WRO Future Engineers] (#WRO Future Engineers)
+[Fases del desafío] (#Fases del desafío)
 
 
 
@@ -56,3 +57,25 @@ WRO Future Engineers
 Future Engineers es una categoría de la World Robot Olympiad (WRO) en la que los participantes diseñan, construyen y programan un vehículo autónomo capaz de completar diferentes desafíos dentro de una pista. El vehículo debe interpretar su entorno, tomar decisiones y ejecutar sus movimientos sin intervención humana.
 
 Para nosotros, esta categoría representa una oportunidad para aplicar nuestros conocimientos en un proyecto real, poner a prueba nuestras habilidades y mejorar constantemente nuestro vehículo mediante pruebas y ajustes.
+
+Fases del desafío
+El recorrido está compuesto por tres fases, en las que el vehículo debe interpretar diferentes elementos de la pista y responder de manera autónoma.
+
+1. Guía por color — Azul y naranja
+
+En esta primera fase, el vehículo utiliza la cámara frontal para identificar las franjas de color que indican la dirección del recorrido. El sistema analiza la primera franja detectada y determina el giro correspondiente:
+Naranja 🟧: giro hacia la derecha.
+Azul 🟦: giro hacia la izquierda.
+
+2. Detección y evasión de obstáculos — Rojo y verde
+
+En la segunda fase, el vehículo debe detectar los cubos que se encuentran en la pista y determinar la maniobra necesaria para evitarlos.
+Cubo rojo 🟥: giro hacia la derecha.
+Cubo verde 🟩: giro hacia la izquierda.
+La información obtenida por las cámaras permite identificar el obstáculo y seleccionar la dirección correspondiente.
+
+3. Parqueo autónomo — Área rosada 🩷
+
+En la última fase, el vehículo debe reconocer el área delimitada por tablas rosadas y realizar la maniobra necesaria para ingresar y posicionarse dentro del espacio de parqueo.
+
+En esta etapa se busca que el vehículo pueda controlar su movimiento y terminar el recorrido de manera precisa y completamente autónoma.

@@ -13,7 +13,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 - [Mision](#mision)
 - [Vision](#vision)
 - [WRO Future Engineers](#wro-future-engineers)
-- [Fases del desafío](#fases-del-desafío)
+- [Fases del desafío](#fases-del-desafio)
 
 
 
@@ -54,7 +54,7 @@ Future Engineers es una categoría de la World Robot Olympiad (WRO) en la que lo
 
 Para nosotros, esta categoría representa una oportunidad para aplicar nuestros conocimientos en un proyecto real, poner a prueba nuestras habilidades y mejorar constantemente nuestro vehículo mediante pruebas y ajustes.
 
-## Fases del desafío
+## Fases del desafio
 
 El recorrido está compuesto por tres fases, en las que el vehículo debe interpretar diferentes elementos de la pista y responder de manera autónoma.
 

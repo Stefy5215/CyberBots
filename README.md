@@ -9,13 +9,11 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 
 
-Nuestro equipo](#nuestro-equipo)
+- [Nuestro equipo](#nuestro-equipo)
 - [Misión](#misión)
 - [Visión](#visión)
 - [WRO Future Engineers](#wro-future-engineers)
 - [Fases del desafío](#fases-del-desafío)
-
-
 
 
 
@@ -43,10 +41,12 @@ Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientac
 
 
 ## Misión
+
 Desarrollar soluciones robóticas autónomas mediante la integración de programación, electrónica, diseño y trabajo en equipo, aplicando nuestros conocimientos para crear un vehículo eficiente, preciso y capaz de responder a diferentes desafíos.
 
 
 ## Visión
+
 Consolidarnos como un equipo guatemalteco de robótica reconocido por nuestra innovación, disciplina y capacidad de aprendizaje, buscando mejorar continuamente nuestras habilidades y representar a Guatemala con proyectos tecnológicos de calidad.
 
 
@@ -57,6 +57,7 @@ Future Engineers es una categoría de la World Robot Olympiad (WRO) en la que lo
 Para nosotros, esta categoría representa una oportunidad para aplicar nuestros conocimientos en un proyecto real, poner a prueba nuestras habilidades y mejorar constantemente nuestro vehículo mediante pruebas y ajustes.
 
 ## Fases del desafío
+
 El recorrido está compuesto por tres fases, en las que el vehículo debe interpretar diferentes elementos de la pista y responder de manera autónoma.
 
 1. Guía por color — Azul y naranja

@@ -24,7 +24,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 Somos un equipo conformado por tres estudiantes guatemaltecos que compartimos el interés por la robótica, la tecnología y la innovación. A lo largo del proyecto, hemos trabajado de manera colaborativa, aportando nuestras habilidades y conocimientos en las diferentes áreas necesarias para desarrollar nuestro vehículo.
 
-Integrantes
+INTEGRANTES 
 
 Sergio Andrés Carrera Canel
 
@@ -61,14 +61,19 @@ El recorrido está compuesto por tres fases, en las que el vehículo debe interp
 1. Guía por color — Azul y naranja
 
 En esta primera fase, el vehículo utiliza la cámara frontal para identificar las franjas de color que indican la dirección del recorrido. El sistema analiza la primera franja detectada y determina el giro correspondiente:
+
 Naranja 🟧: giro hacia la derecha.
+
 Azul 🟦: giro hacia la izquierda.
 
 2. Detección y evasión de obstáculos — Rojo y verde
 
 En la segunda fase, el vehículo debe detectar los cubos que se encuentran en la pista y determinar la maniobra necesaria para evitarlos.
+
 Cubo rojo 🟥: giro hacia la derecha.
+
 Cubo verde 🟩: giro hacia la izquierda.
+
 La información obtenida por las cámaras permite identificar el obstáculo y seleccionar la dirección correspondiente.
 
 3. Parqueo autónomo — Área rosada 🩷

@@ -13,7 +13,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 [Misión](#-Mision) 
 
-     [Visión](#-Vision)
+[Visión](#-Vision)
 
 [WRO Future Engineers](#WRO-Future-Engineers)
 

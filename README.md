@@ -14,7 +14,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 - [Vision](#vision)
 - [WRO Future Engineers](#wro-future-engineers)
 - [Fases del desafío](#fases-del-desafio)
-
+-[Ensamblaje del vehiculo](#ensamblaje-del-vehiculo)
 
 
 
@@ -28,15 +28,21 @@ INTEGRANTES
 
 Sergio Andrés Carrera Canel
 
-Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, analítico y enfocado en sus objetivos. Dentro del equipo, está a cargo principalmente de la programación y lógica de funcionamiento del vehículo.
+EDAD: 16 años
+
+Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, analítico y enfocado en sus objetivos. Dentro del equipo, está a cargo principalmente de la programación y lógica de funcionamiento del vehículo.
 
 Stefany Andrea Tobar de Paz
 
-Estudiante guatemalteca de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la electrónica y parte del desarrollo visual.
+EDAD: 16
+
+Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la electrónica y parte del desarrollo visual.
 
 Jason Arturo Carrera Garrido
 
-Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
+EDAD: 17
+
+Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
 
 
 ## Mision
@@ -81,3 +87,10 @@ La información obtenida por las cámaras permite identificar el obstáculo y se
 En la última fase, el vehículo debe reconocer el área delimitada por tablas rosadas y realizar la maniobra necesaria para ingresar y posicionarse dentro del espacio de parqueo.
 
 En esta etapa se busca que el vehículo pueda controlar su movimiento y terminar el recorrido de manera precisa y completamente autónoma.
+
+
+## Ensamblaje del vehiculo
+
+El vehículo está construido sobre una base metálica de 28 × 20 cm, con un costo de Q500. La estructura cuenta con cuatro ruedas y está organizada en dos niveles: en la parte inferior se encuentran los motores, mientras que en el nivel superior están ubicadas las baterías, el Arduino y la Raspberry Pi.
+
+En la parte superior se instaló una base de cartón que sirve como soporte para dos cámaras, colocadas a una altura que permite captar imágenes del entorno. Esta distribución busca aprovechar el espacio disponible y mantener los componentes organizados y accesibles para realizar ajustes y mantenimiento.

@@ -10,8 +10,8 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 
 - [Nuestro equipo](#nuestro-equipo)
-- [Misión](#misión)
-- [Visión](#visión)
+- [Mision](#mision)
+- [Vision](#vision)
 - [WRO Future Engineers](#wro-future-engineers)
 - [Fases del desafío](#fases-del-desafío)
 
@@ -39,11 +39,11 @@ Jason Arturo Carrera Garrido
 Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
 
 
-## Misión 
+## Mision
 
 Desarrollar soluciones robóticas autónomas mediante la integración de programación, electrónica, diseño y trabajo en equipo, aplicando nuestros conocimientos para crear un vehículo eficiente, preciso y capaz de responder a diferentes desafíos.
 
-## Visión 
+## Vision
 
 Consolidarnos como un equipo guatemalteco de robótica reconocido por nuestra innovación, disciplina y capacidad de aprendizaje, buscando mejorar continuamente nuestras habilidades y representar a Guatemala con proyectos tecnológicos de calidad.
 

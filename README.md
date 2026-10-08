@@ -14,5 +14,13 @@ Somos un equipo conformado por tres estudiantes guatemaltecos que compartimos el
 Integrantes
 
 Sergio Andrés Carrera Canel
+
+Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, analítico y enfocado en sus objetivos. Dentro del equipo, está a cargo principalmente de la programación y lógica de funcionamiento del vehículo.
+
 Stefany Andrea Tobar de Paz
+
+Estudiante guatemalteca de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la electrónica y parte del desarrollo visual.
+
 Jason Arturo Carrera Garrido
+
+Estudiante guatemalteco de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.

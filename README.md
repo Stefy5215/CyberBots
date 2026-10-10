@@ -13,7 +13,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 -[2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
 
- -[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto)
+-[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto)
 
 
 

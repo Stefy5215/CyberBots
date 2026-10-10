@@ -13,8 +13,9 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 -[2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
 
--[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto)
--[3. Gestión de la movilidad](#3.-gestion-de-movilidad)
+-[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto).    
+
+-[3. Gestion de la movilidad](#3.-gestion-de-movilidad)
 
 
 
@@ -54,7 +55,7 @@ Durante el desarrollo, documentamos los avances, las configuraciones y las soluc
 
 Nuestro objetivo es desarrollar un robot autónomo que combine precisión, capacidad de respuesta y eficiencia, demostrando cómo la integración de distintas tecnologías puede ayudarnos a superar los desafíos de la robótica competitiva.
 
-3. Gestión de la movilidad
+3. Gestion de la movilidad
 
 3.1. Sistema de tracción y desplazamiento
 

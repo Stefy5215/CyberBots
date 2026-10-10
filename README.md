@@ -11,10 +11,8 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 - [Nuestro equipo](#nuestro-equipo)
 - [Descripcion del proyecto](#descripcion-del-ptoyecto)
+
        -[1.1 Acerca del proyecto](#acerca-del-proyecto)
-- [WRO Future Engineers](#wro-future-engineers)
-- [Fases del desafío](#fases-del-desafio)
--[Ensamblaje del vehiculo](#ensamblaje-del-vehiculo)
 
 
 
@@ -43,7 +41,7 @@ Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa e
 
 ## Descripcion del Proyecto
 
-        ## 1.1 Acerca del proyecto 
+  ## 1.1 Acerca del proyecto 
 
 Este proyecto consiste en el desarrollo de un vehículo robótico autónomo diseñado para enfrentar los distintos retos de navegación y detección de obstáculos de la competencia WRO Future Engineers. A través de este desafío, buscamos poner en práctica nuestros conocimientos de robótica, electrónica y programación para crear una solución capaz de desenvolverse de manera autónoma en una pista de competición.
 

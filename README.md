@@ -2,17 +2,16 @@
 CYBERBOTS 
 
 
-CyberBots es un equipo de robótica que participa en WRO Future Engineers, donde desarrollamos vehículos autónomos capaces de interpretar su entorno y tomar decisiones de forma independiente.
+CyberBots es un equipo de robótica que participa en WRO Future Engineers 2026, donde desarrollamos vehículos autónomos capaces de interpretar su entorno y tomar decisiones de forma independiente.
 
-En este proyecto combinamos programación, electrónica, diseño mecánico y visión por computadora para diseñar, construir y mejorar nuestro vehículo.
 
 Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ensamblaje hasta la programación, las pruebas y las mejoras realizadas durante el proyecto.
 
 
 
 - [Nuestro equipo](#nuestro-equipo)
-- [Mision](#mision)
-- [Vision](#vision)
+- [Descripcion del proyecto](#descripcion-del-ptoyecto)
+       -[1.1 Acerca del proyecto](#acerca-del-proyecto)
 - [WRO Future Engineers](#wro-future-engineers)
 - [Fases del desafío](#fases-del-desafio)
 -[Ensamblaje del vehiculo](#ensamblaje-del-vehiculo)
@@ -40,52 +39,17 @@ EDAD: 17 años
 Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
 
 
-## Mision
-
-Desarrollar soluciones robóticas autónomas mediante la integración de programación, electrónica, diseño y trabajo en equipo, aplicando nuestros conocimientos para crear un vehículo eficiente, preciso y capaz de responder a diferentes desafíos.
-
-## Vision
-
-Consolidarnos como un equipo guatemalteco de robótica reconocido por nuestra innovación, disciplina y capacidad de aprendizaje, buscando mejorar continuamente nuestras habilidades y representar a Guatemala con proyectos tecnológicos de calidad.
 
 
-## WRO Future Engineers
+## Descripción del Proyecto
+        ## 1.1 Acerca del proyecto 
 
-Future Engineers es una categoría de la World Robot Olympiad (WRO) en la que los participantes diseñan, construyen y programan un vehículo autónomo capaz de completar diferentes desafíos dentro de una pista. El vehículo debe interpretar su entorno, tomar decisiones y ejecutar sus movimientos sin intervención humana.
+Este proyecto consiste en el desarrollo de un vehículo robótico autónomo diseñado para enfrentar los distintos retos de navegación y detección de obstáculos de la competencia WRO Future Engineers. A través de este desafío, buscamos poner en práctica nuestros conocimientos de robótica, electrónica y programación para crear una solución capaz de desenvolverse de manera autónoma en una pista de competición.
 
-Para nosotros, esta categoría representa una oportunidad para aplicar nuestros conocimientos en un proyecto real, poner a prueba nuestras habilidades y mejorar constantemente nuestro vehículo mediante pruebas y ajustes.
+La idea surge de nuestro interés por explorar nuevas posibilidades en la ingeniería y convertir los desafíos técnicos en oportunidades para innovar, experimentar y aprender. Como equipo, trabajamos en el diseño e integración de los diferentes componentes, buscando mejorar el funcionamiento del robot mediante pruebas, análisis de resultados y ajustes continuos.
 
-## Fases del desafio
+El sistema está basado en una Raspberry Pi 4, encargada del procesamiento principal, junto con una cámara HuskyLens, que permite identificar visualmente los elementos del entorno. Además, incorpora un sensor LIDAR para obtener información sobre las distancias y contribuir a una navegación más segura y precisa. La combinación de estos componentes busca fortalecer la capacidad del robot para interpretar su entorno y responder adecuadamente ante los obstáculos presentes en la pista.
 
-El recorrido está compuesto por tres fases, en las que el vehículo debe interpretar diferentes elementos de la pista y responder de manera autónoma.
+Durante el desarrollo, documentamos los avances, las configuraciones y las soluciones implementadas con el propósito de mantener un registro organizado del proceso de construcción y programación.
 
-1. Guía por color — Azul y naranja
-
-En esta primera fase, el vehículo utiliza la cámara frontal para identificar las franjas de color que indican la dirección del recorrido. El sistema analiza la primera franja detectada y determina el giro correspondiente:
-
-Naranja 🟧: giro hacia la derecha.
-
-Azul 🟦: giro hacia la izquierda.
-
-2. Detección y evasión de obstáculos — Rojo y verde
-
-En la segunda fase, el vehículo debe detectar los cubos que se encuentran en la pista y determinar la maniobra necesaria para evitarlos.
-
-Cubo rojo 🟥: giro hacia la derecha.
-
-Cubo verde 🟩: giro hacia la izquierda.
-
-La información obtenida por las cámaras permite identificar el obstáculo y seleccionar la dirección correspondiente.
-
-3. Parqueo autónomo — Área rosada 🩷
-
-En la última fase, el vehículo debe reconocer el área delimitada por tablas rosadas y realizar la maniobra necesaria para ingresar y posicionarse dentro del espacio de parqueo.
-
-En esta etapa se busca que el vehículo pueda controlar su movimiento y terminar el recorrido de manera precisa y completamente autónoma.
-
-
-## Ensamblaje del vehiculo
-
-El vehículo está construido sobre una base metálica de 28 × 20 cm, con un costo de Q500. La estructura cuenta con cuatro ruedas y está organizada en dos niveles: en la parte inferior se encuentran los motores, mientras que en el nivel superior están ubicadas las baterías, el Arduino y la Raspberry Pi.
-
-En la parte superior se instaló una base de cartón que sirve como soporte para dos cámaras, colocadas a una altura que permite captar imágenes del entorno. Esta distribución busca aprovechar el espacio disponible y mantener los componentes organizados y accesibles para realizar ajustes y mantenimiento.
+Nuestro objetivo es desarrollar un robot autónomo que combine precisión, capacidad de respuesta y eficiencia, demostrando cómo la integración de distintas tecnologías puede ayudarnos a superar los desafíos de la robótica competitiva.

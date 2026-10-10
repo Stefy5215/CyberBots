@@ -1,4 +1,5 @@
-# CyberBots
+# WRO FUTURE ENGINEEERS 2026 
+CYBERBOTS 
 
 
 CyberBots es un equipo de robótica que participa en WRO Future Engineers, donde desarrollamos vehículos autónomos capaces de interpretar su entorno y tomar decisiones de forma independiente.
@@ -22,21 +23,15 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 ## Nuestro equipo 
 
-Somos un equipo conformado por tres estudiantes guatemaltecos que compartimos el interés por la robótica, la tecnología y la innovación. A lo largo del proyecto, hemos trabajado de manera colaborativa, aportando nuestras habilidades y conocimientos en las diferentes áreas necesarias para desarrollar nuestro vehículo.
+Somos un equipo conformado por dos estudiantes guatemaltecos que compartimos el interés por la robótica, la tecnología y la innovación. A lo largo del proyecto, hemos trabajado de manera colaborativa, aportando nuestras habilidades y conocimientos en las diferentes áreas necesarias para desarrollar nuestro vehículo.
 
 INTEGRANTES 
-
-Sergio Andrés Carrera Canel
-
-EDAD: 16 años
-
-Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, analítico y enfocado en sus objetivos. Dentro del equipo, está a cargo principalmente de la programación y lógica de funcionamiento del vehículo.
 
 Stefany Andrea Tobar de Paz
 
 EDAD: 16 años
 
-Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la electrónica y parte del desarrollo visual.
+Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la programación, electrónica y documentación del proyecto.
 
 Jason Arturo Carrera Garrido
 

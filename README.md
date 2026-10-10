@@ -13,11 +13,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 -[2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
 
--[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto).    
-
 -[3 Gestion de la movilidad](#3-gestion-de-la-movilidad)
-
--[3.1 Sistema de traccion y desplazamiento](#3.1-sistema-de-traccion-y-desplazamiento)
 
 
 
@@ -66,7 +62,7 @@ El mecanismo de desplazamiento del robot está diseñado para proporcionar un mo
 
 Esta distribución permite separar las funciones de propulsión y dirección, facilitando el control de las trayectorias y la ejecución de maniobras durante los desafíos de la competencia.
 
-3.2. Motores de tracción
+## 3.2 Motores de tracción
 
 Para impulsar el vehículo, se seleccionaron motores de corriente continua N20, debido a su tamaño reducido y a su facilidad de integración en estructuras robóticas compactas.
 
@@ -84,7 +80,7 @@ La selección de estos motores responde a la necesidad de mantener un diseño co
 
 Además, los encoders incorporados permiten obtener información sobre el movimiento de los motores, lo que puede utilizarse para estimar el desplazamiento de las ruedas y mejorar el control de velocidad. Esta retroalimentación resulta útil para ajustar el comportamiento del vehículo durante las pruebas y favorecer movimientos más consistentes.
 
-3.3. Mecanismo de transmisión diferencial
+## 3.3 Mecanismo de transmisión diferencial
 
 La transmisión del movimiento hacia las ruedas traseras se realiza mediante un mecanismo diferencial construido con engranajes LEGO. Su función es permitir que ambas ruedas giren a velocidades diferentes cuando el robot realiza una curva.
 

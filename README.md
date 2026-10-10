@@ -14,6 +14,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 -[2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
 
 -[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto)
+-[3. Gestión de la movilidad](#3.-gestion-de-movilidad)
 
 
 
@@ -52,3 +53,37 @@ El sistema está basado en una Raspberry Pi 4, encargada del procesamiento princ
 Durante el desarrollo, documentamos los avances, las configuraciones y las soluciones implementadas con el propósito de mantener un registro organizado del proceso de construcción y programación.
 
 Nuestro objetivo es desarrollar un robot autónomo que combine precisión, capacidad de respuesta y eficiencia, demostrando cómo la integración de distintas tecnologías puede ayudarnos a superar los desafíos de la robótica competitiva.
+
+3. Gestión de la movilidad
+
+3.1. Sistema de tracción y desplazamiento
+
+El mecanismo de desplazamiento del robot está diseñado para proporcionar un movimiento controlado y una respuesta adecuada durante los recorridos de la pista. Para ello, se utiliza un sistema de tracción en las dos ruedas traseras, mientras que la orientación del vehículo se controla mediante las ruedas delanteras, accionadas por un servomotor S0009M.
+
+Esta distribución permite separar las funciones de propulsión y dirección, facilitando el control de las trayectorias y la ejecución de maniobras durante los desafíos de la competencia.
+
+3.2. Motores de tracción
+
+Para impulsar el vehículo, se seleccionaron motores de corriente continua N20, debido a su tamaño reducido y a su facilidad de integración en estructuras robóticas compactas.
+
+Características técnicas del motor N20
+
+- Voltaje nominal: 6 V
+- Velocidad sin carga: 500 RPM
+- Par de bloqueo: 0.15 kg·cm
+- Corriente indicada: 0.023 A
+- Relación de engranajes: 1:100
+
+Justificación de la elección
+
+La selección de estos motores responde a la necesidad de mantener un diseño compacto y reducir el espacio ocupado por los componentes de propulsión. Su caja reductora permite adaptar la velocidad de giro a las necesidades de desplazamiento del robot.
+
+Además, los encoders incorporados permiten obtener información sobre el movimiento de los motores, lo que puede utilizarse para estimar el desplazamiento de las ruedas y mejorar el control de velocidad. Esta retroalimentación resulta útil para ajustar el comportamiento del vehículo durante las pruebas y favorecer movimientos más consistentes.
+
+3.3. Mecanismo de transmisión diferencial
+
+La transmisión del movimiento hacia las ruedas traseras se realiza mediante un mecanismo diferencial construido con engranajes LEGO. Su función es permitir que ambas ruedas giren a velocidades diferentes cuando el robot realiza una curva.
+
+Esta diferencia de velocidad ayuda a reducir el arrastre de las llantas y facilita los cambios de trayectoria. De esta manera, el mecanismo contribuye a mejorar la maniobrabilidad del vehículo, especialmente al atravesar curvas cerradas o ejecutar maniobras de estacionamiento en paralelo.
+
+La combinación de los motores N20, la lectura de los encoders y la transmisión diferencial integra tres elementos importantes del sistema de movilidad: generación de movimiento, seguimiento de su comportamiento y distribución de la tracción. En conjunto, estos componentes permiten desarrollar una plataforma que puede ajustarse mediante pruebas para responder a las exigencias de la pista de competición.

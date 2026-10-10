@@ -16,7 +16,7 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 -[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto).    
 
 -[3 Gestion de la movilidad](#3-gestion-de-la-movilidad)
--[3.1 Sistema de tracción y desplazamiento](#3.1-sistema-de-traccion-y-desplazamiento)
+  -[3.1 Sistema de traccion y desplazamiento]    (#3.1-sistema-de-traccion-y-desplazamiento)
 
 
 
@@ -59,7 +59,7 @@ Nuestro objetivo es desarrollar un robot autónomo que combine precisión, capac
 
 ## 3 Gestion de la movilidad
 
-## 3.1 Sistema de tracción y desplazamiento
+## 3.1 Sistema de traccion y desplazamiento
 
 El mecanismo de desplazamiento del robot está diseñado para proporcionar un movimiento controlado y una respuesta adecuada durante los recorridos de la pista. Para ello, se utiliza un sistema de tracción en las dos ruedas traseras, mientras que la orientación del vehículo se controla mediante las ruedas delanteras, accionadas por un servomotor S0009M.
 

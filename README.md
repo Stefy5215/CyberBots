@@ -36,6 +36,8 @@ Jason Arturo Carrera Garrido
 
 EDAD: 17 años
 
+
+
 Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
 
 

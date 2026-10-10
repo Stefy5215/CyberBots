@@ -16,6 +16,8 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 -[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto).    
 
 -[3 Gestion de la movilidad](#3-gestion-de-la-movilidad)
+-[3.1 Sistema de tracción y desplazamiento](#3.1-sistema-de-traccion-y-desplazamiento)
+
 
 
 

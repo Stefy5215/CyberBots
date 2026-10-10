@@ -9,9 +9,9 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 
 
-1. [1 Nuestro equipo](#1-nuestro-equipo)
-2. [2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
-  -[2.1Acerca del proyecto](#2.1-acerca-del-proyecto)
+-[1 Nuestro equipo](#1-nuestro-equipo)
+-[2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
+-[2.1 Acerca del proyecto](#2.1-acerca-del-proyecto)
 
 
 

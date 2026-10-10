@@ -9,14 +9,15 @@ Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ens
 
 
 
-- [Nuestro equipo](#nuestro-equipo)
-- [Descripcion del proyecto](#descripcion-del-ptoyecto) -[1.1 Acerca del proyecto](#acerca-del-proyecto)
+1. [Nuestro equipo](#nuestro-equipo)
+2.[Descripcion del proyecto](#descripcion-del-ptoyecto) 
+  -[2.1Acerca del proyecto](#acerca-del-proyecto)
 
 
 
 
 
-## Nuestro equipo 
+## 1 Nuestro equipo 
 
 Somos un equipo conformado por dos estudiantes guatemaltecos que compartimos el interés por la robótica, la tecnología y la innovación. A lo largo del proyecto, hemos trabajado de manera colaborativa, aportando nuestras habilidades y conocimientos en las diferentes áreas necesarias para desarrollar nuestro vehículo.
 
@@ -37,8 +38,8 @@ Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa e
 
 
 
-## Descripcion del Proyecto 
-## 1.1 Acerca del proyecto 
+## 2 Descripcion del Proyecto 
+## 2.1 Acerca del proyecto 
 
 Este proyecto consiste en el desarrollo de un vehículo robótico autónomo diseñado para enfrentar los distintos retos de navegación y detección de obstáculos de la competencia WRO Future Engineers. A través de este desafío, buscamos poner en práctica nuestros conocimientos de robótica, electrónica y programación para crear una solución capaz de desenvolverse de manera autónoma en una pista de competición.
 

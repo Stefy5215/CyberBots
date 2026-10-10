@@ -41,7 +41,8 @@ Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa e
 
 
 
-## Descripción del Proyecto
+## Descripcion del Proyecto
+
         ## 1.1 Acerca del proyecto 
 
 Este proyecto consiste en el desarrollo de un vehículo robótico autónomo diseñado para enfrentar los distintos retos de navegación y detección de obstáculos de la competencia WRO Future Engineers. A través de este desafío, buscamos poner en práctica nuestros conocimientos de robótica, electrónica y programación para crear una solución capaz de desenvolverse de manera autónoma en una pista de competición.

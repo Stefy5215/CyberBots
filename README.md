@@ -30,7 +30,7 @@ Sergio Andrea Carrera Canel
 
 EDAD: 16 años
 
-Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizada y comprometida con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la programación, electrónica y documentación del proyecto.
+Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizado y comprometido con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la programación, electrónica y documentación del proyecto.
 
 Jason Arturo Carrera Garrido
 

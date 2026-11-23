@@ -37,7 +37,8 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   
   servo.attach(SERVO_PIN);
-  servo.write(currentServoAngle);
+  servo.write(30);
+  currentServoAngle = 30;
   
   digitalWrite(MOTOR_DIR_PIN1, LOW);
   digitalWrite(MOTOR_DIR_PIN2, LOW);
@@ -51,7 +52,28 @@ void setup() {
   lastCommandTime = millis();
 }
 
+void quickForwardTest() {
+  servo.write(30);
+  currentServoAngle = 30;
+  digitalWrite(MOTOR_DIR_PIN1, HIGH);
+  digitalWrite(MOTOR_DIR_PIN2, LOW);
+  analogWrite(MOTOR_PIN, 200);
+  delay(1500);
+  digitalWrite(MOTOR_DIR_PIN1, LOW);
+  digitalWrite(MOTOR_DIR_PIN2, LOW);
+  analogWrite(MOTOR_PIN, 0);
+}
+
 void loop() {
+  static bool started = false;
+
+  if (!started) {
+    started = true;
+    servo.write(30);
+    currentServoAngle = 30;
+    quickForwardTest();
+  }
+
   if (Serial.available() > 0) {
     char inChar = Serial.read();
     

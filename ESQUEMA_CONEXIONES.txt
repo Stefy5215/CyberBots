@@ -1,3 +1,17 @@
+ARQUITECTURA ACTUAL: ESP32 clásica + L298N + 1 motor + servo
+=============================================================
+GPIO 25 → ENA (quitar jumper; pull-down 10 kΩ a GND)
+GPIO 26 → IN1
+GPIO 27 → IN2
+GPIO 18 → señal del servo
+GND     → común ESP32/L298N/buck/batería
+
+Motor trasero → OUT1/OUT2; batería motor → VS/12V y GND del L298N.
+Servo → buck ajustado a su tensión nominal; botón en serie con buck IN+.
+El botón NO va a GPIO; no apaga la alimentación del motor L298N.
+LiDAR C1 y ESP32 conectados por USB separado a la Raspberry Pi 5.
+Detalle de alimentación, firmware y pruebas: GUIA_ESP32_L298N_LIDAR.md.
+
 /*
  * Esquema de conexiones - Robot Esquiva Obstáculos
  * Arduino + Motor DC 12V + Servo + LiDAR C1

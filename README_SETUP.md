@@ -1,5 +1,7 @@
 # Obstacle Avoidance Robot - Raspberry Pi 5 Setup Guide
 
+> **ESP32 clásica + L298N:** consulta [GUIA_ESP32_L298N_LIDAR.md](GUIA_ESP32_L298N_LIDAR.md), el sketch `esp32_l298n/esp32_l298n.ino` y la prueba `test_motor_esp32.py`. Las guías con C3 y TB6612 son variantes anteriores.
+
 Este es un robot autónomo que esquiva obstáculos usando LiDAR C1, un servo motor para dirección y un motor de 12V para la propulsión. Se comunica con una Arduino para el control preciso de los actuadores.
 
 ## 📋 Hardware Requerido

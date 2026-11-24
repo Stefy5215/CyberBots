@@ -1,89 +1,97 @@
-.# WRO FUTURE ENGINEEERS 2026.
-CYBERBOTS 
+# CyberBots – WRO Future Engineers 2026
 
+CyberBots is a Guatemalan robotics team developing an autonomous vehicle for **WRO Future Engineers 2026**. This repository documents our prototype work: design iterations, electronics, firmware, LiDAR sensing, navigation experiments, and the process of testing and improving the robot.
 
-CyberBots es un equipo de robótica que participa en WRO Future Engineers 2026, donde desarrollamos vehículos autónomos capaces de interpretar su entorno y tomar decisiones de forma independiente.
+## Team
 
+- **Sergio Andrea Carrera Canel** (16) – programming, electronics, and project documentation.
+- **Jason Arturo Carrera Garrido** (17) – design and visual/project development.
 
-Este repositorio documenta nuestro proceso de desarrollo, desde el diseño y ensamblaje hasta la programación, las pruebas y las mejoras realizadas durante el proyecto.
+## Project overview
 
+Our goal is to build a robot that can perceive its surroundings and react autonomously on a competition-style track. Over time we have explored different hardware combinations; the current working software prototype in this repository focuses on:
 
+- **Raspberry Pi 5** for LiDAR processing and high-level control
+- **Classic ESP32** (DevKit/WROOM, USB serial) for real-time motor and servo control
+- **L298N** motor driver with 1 rear DC motor
+- **1 steering servo**
+- **Slamtec RPLIDAR C1** for distance/obstacle sensing
+- **2× 7.4 V batteries in series** (14.8 V nominal / 16.8 V max) for the drive system, with a buck converter providing ~5.1 V for the Raspberry Pi (USB-C power feed) and servo supply
 
--[1 Nuestro equipo](#1-nuestro-equipo)
+> Scope: this repository covers the LiDAR robot prototype and its control/telemetry code. Other separate projects are maintained outside this repo.
 
--[2 Descripcion del proyecto](#2-descripcion-del-proyecto) 
+## Repository highlights
 
--[3 Gestion de la movilidad](#3-gestion-de-la-movilidad)
+| Path | Description |
+| --- | --- |
+| `esp32_l298n/esp32_l298n.ino` | ESP32 firmware: `S<angle>,M<speed>` serial protocol (9600 baud), safe boot, servo attach on command, and 1 s motor watchdog. |
+| `test_motor_esp32.py` | Guarded motor/servo test (requires explicit confirmation, command refresh, and safe stop). |
+| `lidar_c1.py` | RPLIDAR C1 scan descriptor/node parsing and serial reader. |
+| `robot_c3_lidar.py` | Reactive LiDAR navigation (diagnostic mode or `--drive`) sending commands to the ESP32. |
+| `tests/` | Unit tests for LiDAR decoding and navigation decisions. |
+| `GUIA_ESP32_L298N_LIDAR.md`, `ESQUEMA_CONEXIONES.txt` | Wiring and setup notes. |
 
+## ESP32 pin mapping (`esp32_l298n/esp32_l298n.ino`)
 
+| ESP32 GPIO | Connects to |
+| --- | --- |
+| GPIO 25 | L298N `ENA` (remove ENA jumper; 10 kΩ pulldown to GND recommended) |
+| GPIO 26 | L298N `IN1` |
+| GPIO 27 | L298N `IN2` |
+| GPIO 18 | Servo signal |
+| GND | Common ground |
 
+- Serial: **9600 baud**, command format `S<angle>,M<speed>\n` (`angle` 0–180, `speed` -255..255).
+- Safety: motor off at boot, servo PWM attached only when angle changes, and motor stops if commands stop for ~1 s.
 
+## Quick wiring summary (current working setup)
 
+1. **Batteries:** 2× 7.4 V in series → 14.8 V nominal / 16.8 V max.
+2. **Power:** battery positive (`VBAT+`) split to **L298N `VS/12V`** and **buck `IN+`**; battery negative to common GND. *(Never connect battery voltage to the L298N `5V` pin.)*
+3. **Buck (~5.1 V):** powers Raspberry Pi 5 via USB-C (VBUS/GND) and servo V+; buck GND to common GND.
+4. **L298N:** `VS` from `VBAT+`, `GND` common, `OUT1/OUT2` to DC motor, control from ESP32 GPIO25/26/27.
+5. **Servo:** signal → GPIO18, V+ → regulated buck output, GND → common GND.
+6. **USB data:** ESP32 ↔ Raspberry Pi (control), RPLIDAR C1 ↔ Raspberry Pi (scans).
+7. **Common ground:** battery−, L298N, buck, servo, ESP32, and Raspberry Pi grounds tied together.
 
-## 1 Nuestro equipo 
+Check motor/driver voltage ratings (16.8 V fully charged) and L298N `5V-EN` jumper configuration for your module.
 
-Somos un equipo conformado por dos estudiantes guatemaltecos que compartimos el interés por la robótica, la tecnología y la innovación. A lo largo del proyecto, hemos trabajado de manera colaborativa, aportando nuestras habilidades y conocimientos en las diferentes áreas necesarias para desarrollar nuestro vehículo.
+## How to run
 
-INTEGRANTES 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+ls -l /dev/serial/by-id
+```
 
-Sergio Andrea Carrera Canel
+**Guarded motor test** (wheel lifted / power cut ready):
 
-EDAD: 16 años
+```bash
+./.venv/bin/python test_motor_esp32.py /dev/serial/by-id/<esp32-port> --confirm-wheels-lifted
+```
 
-Estudiante guatemalteca del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Computación. Se caracteriza por ser responsable, organizado y comprometido con el trabajo en equipo. Dentro del proyecto, está a cargo principalmente de la programación, electrónica y documentación del proyecto.
+**LiDAR navigation** (diagnostic by default; add `--drive` to enable motion):
 
-Jason Arturo Carrera Garrido
+```bash
+./.venv/bin/python robot_c3_lidar.py --lidar-port /dev/serial/by-id/<lidar-port> --mcu-port /dev/serial/by-id/<esp32-port> [--drive --max-speed 255]
+```
 
-EDAD: 17 años
+**Tests:**
 
-Estudiante guatemalteco del Colegio Villa Real Atlántico 1. Actualmente cursa el grado de cuarto bachillerato en Ciencias y Letras con Orientación en Diseño Gráfico. Se caracteriza por su creatividad, disposición para colaborar y capacidad para aportar al trabajo en equipo. Está encargado principalmente del diseño y desarrollo visual del proyecto.
+```bash
+./.venv/bin/python -m unittest discover -s tests -v
+```
 
+## Work timeline
 
+- **2026-10-31:** Built and tested initial RPLIDAR C1 protocol parsing/decoding and unit tests.
+- **2026-11-20 to 2026-11-22:** Developed classic ESP32 + L298N firmware, guarded motor/servo test tooling, LiDAR navigation scripts, wiring notes, and setup documentation through iterative hardware testing.
+- **2026-11-22:** Verified serial command acknowledgements and timed motor tests (with watchdog refresh), confirmed LiDAR scans, and tuned control/test parameters.
+- **2026-11-23:** Consolidated documentation and integrated the robot codebase and project notes into the repository.
 
+## Safety
 
-## 2 Descripcion del Proyecto 
-## 2.1 Acerca del Proyecto 
-
-Este proyecto consiste en el desarrollo de un vehículo robótico autónomo diseñado para enfrentar los distintos retos de navegación y detección de obstáculos de la competencia WRO Future Engineers. A través de este desafío, buscamos poner en práctica nuestros conocimientos de robótica, electrónica y programación para crear una solución capaz de desenvolverse de manera autónoma en una pista de competición.
-
-La idea surge de nuestro interés por explorar nuevas posibilidades en la ingeniería y convertir los desafíos técnicos en oportunidades para innovar, experimentar y aprender. Como equipo, trabajamos en el diseño e integración de los diferentes componentes, buscando mejorar el funcionamiento del robot mediante pruebas, análisis de resultados y ajustes continuos.
-
-El sistema está basado en una Raspberry Pi 4, encargada del procesamiento principal, junto con una cámara HuskyLens, que permite identificar visualmente los elementos del entorno. Además, incorpora un sensor LIDAR para obtener información sobre las distancias y contribuir a una navegación más segura y precisa. La combinación de estos componentes busca fortalecer la capacidad del robot para interpretar su entorno y responder adecuadamente ante los obstáculos presentes en la pista.
-
-Durante el desarrollo, documentamos los avances, las configuraciones y las soluciones implementadas con el propósito de mantener un registro organizado del proceso de construcción y programación.
-
-Nuestro objetivo es desarrollar un robot autónomo que combine precisión, capacidad de respuesta y eficiencia, demostrando cómo la integración de distintas tecnologías puede ayudarnos a superar los desafíos de la robótica competitiva.
-
-## 3 Gestion de la movilidad
-
-## 3.1 Sistema de traccion y desplazamiento
-
-El mecanismo de desplazamiento del robot está diseñado para proporcionar un movimiento controlado y una respuesta adecuada durante los recorridos de la pista. Para ello, se utiliza un sistema de tracción en las dos ruedas traseras, mientras que la orientación del vehículo se controla mediante las ruedas delanteras, accionadas por un servomotor S0009M.
-
-Esta distribución permite separar las funciones de propulsión y dirección, facilitando el control de las trayectorias y la ejecución de maniobras durante los desafíos de la competencia.
-
-## 3.2 Motores de tracción
-
-Para impulsar el vehículo, se seleccionaron motores de corriente continua N20, debido a su tamaño reducido y a su facilidad de integración en estructuras robóticas compactas.
-
-Características técnicas del motor N20
-
-- Voltaje nominal: 6 V
-- Velocidad sin carga: 500 RPM
-- Par de bloqueo: 0.15 kg·cm
-- Corriente indicada: 0.023 A
-- Relación de engranajes: 1:100
-
-Justificación de la elección
-
-La selección de estos motores responde a la necesidad de mantener un diseño compacto y reducir el espacio ocupado por los componentes de propulsión. Su caja reductora permite adaptar la velocidad de giro a las necesidades de desplazamiento del robot.
-
-Además, los encoders incorporados permiten obtener información sobre el movimiento de los motores, lo que puede utilizarse para estimar el desplazamiento de las ruedas y mejorar el control de velocidad. Esta retroalimentación resulta útil para ajustar el comportamiento del vehículo durante las pruebas y favorecer movimientos más consistentes.
-
-## 3.3 Mecanismo de transmisión diferencial
-
-La transmisión del movimiento hacia las ruedas traseras se realiza mediante un mecanismo diferencial construido con engranajes LEGO. Su función es permitir que ambas ruedas giren a velocidades diferentes cuando el robot realiza una curva.
-
-Esta diferencia de velocidad ayuda a reducir el arrastre de las llantas y facilita los cambios de trayectoria. De esta manera, el mecanismo contribuye a mejorar la maniobrabilidad del vehículo, especialmente al atravesar curvas cerradas o ejecutar maniobras de estacionamiento en paralelo.
-
-La combinación de los motores N20, la lectura de los encoders y la transmisión diferencial integra tres elementos importantes del sistema de movilidad: generación de movimiento, seguimiento de su comportamiento y distribución de la tracción. En conjunto, estos componentes permiten desarrollar una plataforma que puede ajustarse mediante pruebas para responder a las exigencias de la pista de competición.
+- Never auto-run motors on boot; keep a physical power cutoff accessible.
+- Test with wheels lifted or in a clear, supervised area.
+- Verify polarities, buck output (~5.1 V), grounds, and voltage ratings before powering the system.

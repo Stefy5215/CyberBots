@@ -1,0 +1,22 @@
+# BOB workspace memory
+.bob/
+
+# Python virtual environments
+.venv/
+.venv-*/
+server/.venv/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local/editor artifacts
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.lgd-nfy0/

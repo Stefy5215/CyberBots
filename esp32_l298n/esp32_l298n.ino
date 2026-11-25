@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-constexpr uint8_t ENA_PIN = 25;
-constexpr uint8_t IN1_PIN = 26;
-constexpr uint8_t IN2_PIN = 27;
-constexpr uint8_t SERVO_PIN = 18;
+constexpr uint8_t ENA_PIN = 5;
+constexpr uint8_t IN1_PIN = 6;
+constexpr uint8_t IN2_PIN = 7;
+constexpr uint8_t SERVO_PIN = 4;
 constexpr uint32_t COMMAND_TIMEOUT_MS = 1000;
 
 String commandBuffer;

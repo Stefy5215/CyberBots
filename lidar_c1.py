@@ -129,6 +129,43 @@ class RPLidarC1:
             if time.monotonic() - last_node_time > 3.0:
                 raise TimeoutError("El LiDAR dejó de enviar nodos de medición por USB.")
 
+    def iter_scans_fast(self, yield_every_nodes: int = 12):
+        """Yield scan snapshots frecuentemente (cada N nodos válidos) para reacciones de baja latencia.
+
+        Yields (scan_nodes, is_new_revolution). scan_nodes es una copia del escaneo actual.
+        """
+        current_scan: list[ScanNode] = []
+        last_node_time = time.monotonic()
+        nodes_since_yield = 0
+
+        while self._running:
+            self._buffer.extend(self._serial.read(512))
+            while len(self._buffer) >= STANDARD_NODE_SIZE:
+                node = decode_measurement_node(bytes(self._buffer[:STANDARD_NODE_SIZE]))
+                if node is None:
+                    del self._buffer[0]
+                    continue
+
+                del self._buffer[:STANDARD_NODE_SIZE]
+                last_node_time = time.monotonic()
+                new_rev = bool(node.starts_revolution and current_scan)
+                if new_rev:
+                    # yield revolución completa
+                    yield list(current_scan), True
+                    current_scan = []
+                    nodes_since_yield = 0
+
+                if node.distance_mm > 0:
+                    current_scan.append(node)
+                nodes_since_yield += 1
+
+                if nodes_since_yield >= yield_every_nodes and current_scan:
+                    yield list(current_scan), False
+                    nodes_since_yield = 0
+
+            if time.monotonic() - last_node_time > 3.0:
+                raise TimeoutError("El LiDAR dejó de enviar nodos de medición por USB.")
+
     def stop(self) -> None:
         self._running = False
         if self._serial is not None:

@@ -67,6 +67,11 @@ class RPLidarC1:
         self._serial = None
         self._buffer = bytearray()
         self._running = False
+        self._stream_activity = time.monotonic()
+
+    def mark_stream_activity(self) -> None:
+        """Marca actividad USB aunque la lectura ocurra fuera del generador principal."""
+        self._stream_activity = time.monotonic()
 
     def start(self) -> None:
         try:
@@ -129,6 +134,17 @@ class RPLidarC1:
             if time.monotonic() - last_node_time > 3.0:
                 raise TimeoutError("El LiDAR dejó de enviar nodos de medición por USB.")
 
+    def restart_scan(self) -> None:
+        """Reinicia el modo scan sin cerrar el dispositivo USB."""
+        self._buffer.clear()
+        self._serial.write(STOP_COMMAND)
+        time.sleep(0.1)
+        self._serial.reset_input_buffer()
+        self._serial.dtr = False
+        time.sleep(0.25)
+        self._serial.write(SCAN_COMMAND)
+        self._read_scan_descriptor(timeout=3.0)
+
     def iter_scans_fast(self, yield_every_nodes: int = 12):
         """Yield scan snapshots frecuentemente (cada N nodos válidos) para reacciones de baja latencia.
 
@@ -139,7 +155,10 @@ class RPLidarC1:
         nodes_since_yield = 0
 
         while self._running:
-            self._buffer.extend(self._serial.read(512))
+            raw = self._serial.read(512)
+            if raw:
+                self.mark_stream_activity()
+            self._buffer.extend(raw)
             while len(self._buffer) >= STANDARD_NODE_SIZE:
                 node = decode_measurement_node(bytes(self._buffer[:STANDARD_NODE_SIZE]))
                 if node is None:
@@ -163,7 +182,7 @@ class RPLidarC1:
                     yield list(current_scan), False
                     nodes_since_yield = 0
 
-            if time.monotonic() - last_node_time > 3.0:
+            if time.monotonic() - max(last_node_time, self._stream_activity) > 10.0:
                 raise TimeoutError("El LiDAR dejó de enviar nodos de medición por USB.")
 
     def stop(self) -> None:
